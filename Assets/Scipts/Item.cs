@@ -12,9 +12,9 @@ public class Item : MonoBehaviour
     }
 
   
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter (UnityEngine.Collision collision)
     {
-        if(collision.GetComponent<Collider>().tag == "Player")
+        if(collision.collider.tag == "Player")
         {
             Destroy(gameObject);
             gameManager.ItemPickedUp();

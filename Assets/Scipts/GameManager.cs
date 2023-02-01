@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject levelWon;
     [SerializeField] private GameObject objectiveScreen;
     [SerializeField] private MouseLook mouseLook;
+    [SerializeField] private Actions actionsScript;
     [SerializeField] private FPMovement fpmovement;
     [SerializeField] private TPMovement tpmovement;
     [SerializeField] private float yourTime;
@@ -65,6 +66,7 @@ public class GameManager : MonoBehaviour
         objectiveScreen.SetActive(true);
         gameOver.SetActive(false);
         levelWon.SetActive(false);
+        actionsScript.enabled= false;
      
         bestTimeTxt.text = PlayerPrefs.GetFloat("BestTime", initialTimeValue).ToString();
     }
@@ -165,6 +167,7 @@ public class GameManager : MonoBehaviour
         startTimer = true;
         mouseLook.enabled = true;
         fpmovement.enabled = true;
+        actionsScript.enabled= true;
         
     }
 
